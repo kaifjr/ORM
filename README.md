@@ -23,12 +23,32 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+```C
+admin.py
+from django.contrib import admin
+from .models import railway,railwayAdmin
+admin.site.register(railway,railwayAdmin)
 
-Include your code here
+models.py
+from django.db import models
+from django.contrib import admin
+class railway (models.Model):
+    train_code=models.CharField(max_length=20,help_text="railway train_code")
+    train_name=models.CharField(max_length=100)
+    start_time=models.IntegerField()
+    End_time=models.IntegerField()
+    start_station_code=models.IntegerField()
+    end_station_code=models.IntegerField()
+    
+ 
+class railwayAdmin(admin.ModelAdmin):
+ list_display=('train_code','train_name','start_time','End_time','start_station_code','end_station_code',)
+```
 
 ## OUTPUT
 
-Include the screenshot of your admin page.
+![1](https://github.com/kaifjr/ORM/assets/147469730/fa0d1af4-6392-493a-960b-5d712e2f0e60)
+
 
 
 ## RESULT
